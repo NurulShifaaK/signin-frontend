@@ -2,8 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+
 import axios from "axios"
 
+
+const API_URL = "https://signin-backend-e8j7.onrender.com";
 const Register = () => {
   const navi=useNavigate()
    
@@ -30,7 +33,7 @@ const Register = () => {
 
 
    const handlesignin = () => {
-   var login= axios.post("http://localhost:3000/signup", {
+   var login= axios.post(`${API_URL}/signup`, {
    username: name,  
     email: email,
     password: passcode 
